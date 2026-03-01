@@ -1,24 +1,26 @@
 "use client";
 
+import Button from "@/components/Button";
 import FeatureCard from "./FeatureCard";
 
 export default function FeaturesSection() {
   return (
     // <section className="mt-20 w-full bg-black py-28 px-6 md:px-20 overflow-hidden">
     <section className="w-full mt-20 py-28 px-6 md:px-20 overflow-hidden">
+      <style>
+        {`
+          @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          .animate-spin-slow {
+            animation: spin-slow 3s linear infinite;
+          }
+        `}
+      </style>
       {/* Top Label */}
       <div className="flex justify-center mb-6">
-        <div className="relative group p-[1px] inline-flex items-center justify-center rounded-full overflow-hidden">
-          {/* The Gradient Border Background */}
-          <span className="absolute inset-0 bg-gradient-to-l from-green-500 to-green-800 rounded-full"></span>
-
-          {/* The Button Content */}
-          <div className="relative px-6 py-2 bg-black rounded-full transition-all group-hover:bg-transparent">
-            <span className="text-white text-lg font-semibold">
-              Features
-            </span>
-          </div>
-        </div>
+        <Button text={"Features"} />
       </div>
 
       {/* Main Heading */}

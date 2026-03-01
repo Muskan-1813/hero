@@ -55,3 +55,28 @@ body {
   line-height: 118%;
   letter-spacing: -1%;
 }
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-borderMove {
+  animation: borderMove 3s linear infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spinSlow {
+  animation: spinSlow 4s linear infinite;
+}
