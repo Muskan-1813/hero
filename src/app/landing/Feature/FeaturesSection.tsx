@@ -6,7 +6,7 @@ import FeatureCard from "./FeatureCard";
 export default function FeaturesSection() {
   return (
     // <section className="mt-20 w-full bg-black py-28 px-6 md:px-20 overflow-hidden">
-    <section className="w-full mt-20 py-28 px-6 md:px-20 overflow-hidden">
+    <section className="w-full mt-20 py-28 px-6 md:px-20 lg:pr-40 overflow-hidden">
       <style>
         {`
           @keyframes spin-slow {
