@@ -24,25 +24,20 @@ function PricingCard({
   return (
     <div
       className={clsx(
-        "relative w-[420px] rounded-[24px] p-[1px] transition-all duration-500",
-        className
+        "relative w-[420px]  rounded-[24px] p-[1px] transition-all duration-500",
+        className,
       )}
       style={
         premium
           ? {
-              background:
-                "linear-gradient(270deg, #16B99E 0%, #BEEE03 100%)",
+              background: "linear-gradient(270deg, #16B99E 0%, #BEEE03 100%)",
             }
           : {}
       }
     >
       <div
         className="rounded-[24px] bg-[#171717] p-10 flex flex-col"
-        style={
-          premium
-            ? {}
-            : { border: "1px solid #474747" }
-        }
+        style={premium ? {} : { border: "1px solid #474747" }}
       >
         {/* HEADER SECTION */}
         <div className="min-h-[190px]">
@@ -98,9 +93,7 @@ function PricingCard({
             >
               {premium ? (
                 <>
-                  <span className="text-[#BEEE03] text-lg font-bold">
-                    ✓
-                  </span>
+                  <span className="text-[#BEEE03] text-lg font-bold">✓</span>
                   <span className="text-white">{feature.label}</span>
                 </>
               ) : (
@@ -121,7 +114,7 @@ function PricingCard({
 
 export default function PricingSection() {
   return (
-    <section className="relative max-h-screen  text-white flex flex-col items-center justify-center px-6">
+    <section className="relative max-h-screen bg-[#010101] text-white flex flex-col items-center justify-center px-6">
       <div className="flex justify-center mt-10 mb-6">
         <Button text={"Pricing"} />
       </div>
@@ -130,8 +123,7 @@ export default function PricingSection() {
         className="text-[48px] font-bold tracking-[-0.01em] text-center drop-shadow-[0_0_30px_rgba(34,197,94,0.3)] text-glow-white"
         style={{ fontFamily: "var(--font-space)" }}
       >
-        Plans to Stay{" "}
-        <span className="text-[#6CFF2E]">Secure</span>
+        Plans to Stay <span className="text-[#6CFF2E]">Secure</span>
       </h1>
 
       <div className="mt-16 flex gap-12 items-start">
@@ -162,6 +154,7 @@ export default function PricingSection() {
           ]}
         />
       </div>
+      
     </section>
   );
 }

@@ -5,12 +5,10 @@ import Image from "next/image";
 export default function InstantConnectionSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden text-white">
-
+      <div className="absolute top-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-t from-transparent to-[#010101]" />
       <div className="relative w-full max-w-[1600px] mx-auto px-8">
-
         {/* TEXT (Behind Phones) */}
         <div className="relative z-0">
-
           <h1
             className="
               text-[84px]
@@ -45,7 +43,6 @@ export default function InstantConnectionSection() {
           >
             With One Tap
           </h1>
-
         </div>
 
         {/* PHONES (Above Text) */}
@@ -60,11 +57,9 @@ export default function InstantConnectionSection() {
             />
           </div>
         </div>
-
       </div>
-
+      <div className="absolute bottom-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-b from-transparent to-[#010101]" />
       {/* Subtle Bottom Fade */}
-      
     </section>
   );
 }

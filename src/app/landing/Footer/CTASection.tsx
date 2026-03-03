@@ -5,27 +5,38 @@ import Button from "@/components/Button";
 
 export default function CTASection() {
   return (
-    <section className="relative font-['Space_Grotesk'] bg-[#020202] text-white pt-36 pb-24 overflow-hidden">
+    <section className="relative font-['Space_Grotesk'] text-white pt-36 pb-24 overflow-hidden bg-[#010101]">
       
       {/* Large Green Curved Background (FIXED) */}
-      <div
-        className="absolute -bottom-40 left-1/2 -translate-x-1/2
-        w-[1400px] h-[700px]
-        bg-[radial-gradient(ellipse_at_center,_rgba(124,255,0,0.25)_0%,_rgba(0,60,0,0.45)_40%,_transparent_70%)]
-        blur-[40px]
-        pointer-events-none"
-      />
+      {/* Horizon Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] aspect-[2/1] pointer-events-none">
+        {/* Green Atmospheric Glow */}
+        
+
+        {/* Curved Horizon Line */}
+        <div
+          className="
+    absolute
+    top-[270px]
+    left-0
+    w-full
+    h-full
+    rounded-[100%]
+    border-t
+    border-lime-400/40
+    shadow-[0_-30px_80px_rgba(16,255,0,0.35)]
+  "
+        />
+      </div>
 
       <div className="max-w-7xl mx-auto px-12 relative z-10">
-        
         {/* ================= TOP CTA CARD ================= */}
         <div
           className="relative rounded-[28px] overflow-hidden
           border border-white/5
           bg-[linear-gradient(90deg,#0d0f14_0%,#0a0c10_50%,#061b0f_100%)]
-          shadow-[0_0_0_1px_rgba(255,255,255,0.03)] p-16 flex items-center justify-between"
+           p-16 flex items-center justify-between"
         >
-          
           {/* LEFT CONTENT */}
           <div className="max-w-xl z-10">
             <h3 className="font-bold font-['Space_Grotesk'] text-[48px] leading-[115%] tracking-[-0.02em] mb-10">
@@ -33,7 +44,6 @@ export default function CTASection() {
             </h3>
 
             <div className="flex gap-4 items-center">
-              
               <input
                 type="email"
                 placeholder="Enter Your Email"
@@ -69,24 +79,23 @@ export default function CTASection() {
 
         {/* ================= FOOTER AREA ================= */}
         <div className="mt-28 grid grid-cols-3 items-start">
-          
           {/* LEFT */}
           <div>
             <div className="flex items-center gap-3 mb-5">
               <Image src="/logo.png" alt="Logo" width={30} height={30} />
-              <span className="font-medium text-xl">Traverse VPN</span>
+              <span className="font-medium text-3xl">Traverse VPN</span>
             </div>
 
-            <p className="text-gray-400 max-w-xs leading-relaxed">
+            <p className="text-white text-xl max-w-xs leading-relaxed">
               Take control of your digital identity and enjoy the web the way it
               was meant to be.
             </p>
 
             <div className="flex gap-6 mt-8 opacity-80">
-              <Image src="/x.png" alt="X" width={20} height={20} />
-              <Image src="/instagram.png" alt="IG" width={20} height={20} />
-              <Image src="/youtube.png" alt="YT" width={20} height={20} />
-              <Image src="/linkedin.png" alt="IN" width={20} height={20} />
+              <Image src="/x.png" alt="X" width={28} height={20} />
+              <Image src="/instagram.png" alt="IG" width={28} height={20} />
+              <Image src="/youtube.png" alt="YT" width={28} height={20} />
+              <Image src="/linkedin.png" alt="IN" width={28} height={20} />
             </div>
           </div>
 
@@ -96,28 +105,26 @@ export default function CTASection() {
           </div>
 
           {/* RIGHT LINKS */}
-          <div className="flex flex-col items-end gap-5 text-gray-400 text-xl">
-            <a href="#" className="hover:text-lime-400 transition">
+          <div className="flex flex-col items-end gap-5 text-white ">
+            <a href="#" className="hover:text-lime-400 transition text-xl">
               About Us
             </a>
-            <a href="#" className="hover:text-lime-400 transition">
+            <a href="#" className="hover:text-lime-400 transition text-xl">
               Security
             </a>
-            <a href="#" className="hover:text-lime-400 transition">
+            <a href="#" className="hover:text-lime-400 transition text-xl">
               Refund Policy
             </a>
           </div>
         </div>
 
         {/* BOTTOM ROW */}
-        <div className="mt-20 grid grid-cols-3 items-center text-gray-500 text-sm">
+        <div className=" relative bottom-5 grid grid-cols-3 items-center text-gray-500 text-sm">
           <div></div>
 
-          <div className="text-center">
-            © 2025, All Rights Reserved
-          </div>
+          <div className="text-center text-xl">© 2025, All Rights Reserved</div>
 
-          <div className="text-right">
+          <div className="text-right text-xl ">
             <span className="hover:text-lime-400 transition cursor-pointer">
               Privacy Policy
             </span>
@@ -127,26 +134,45 @@ export default function CTASection() {
             </span>
           </div>
         </div>
-
       </div>
 
-      {/* WATERMARK (FIXED PROPERLY) */}
+      {/* WATERMARK */}
       <div
-        className="absolute bottom-[-140px] left-0 w-full
-        opacity-5 pointer-events-none select-none mb-40"
+        className="
+    relative
+    -bottom-10
+    left-1/2
+    -translate-x-1/2
+    w-full
+    flex
+    justify-center
+    pointer-events-none
+    select-none
+  "
       >
-        <div className="flex items-begin">
-          <img
-            src="/watermarklogo.png"
+        <div className="relative flex items-end opacity-[0.28]">
+          <Image
+            src="/wml.png"
             alt="Watermark Logo"
-            className="h-[240px] w-auto mr-10"
+            width={170}
+            height={170}
+            className="mr-8 brightness-0 invert opacity-50"
           />
-          <span className="text-[200px] font-extrabold text-white leading-none">
+
+          <span
+            className="
+        text-[180px]
+        font-extrabold
+        text-white/50
+        whitespace-nowrap
+        leading-none
+        tracking-tight
+      "
+          >
             Traverse VPN
           </span>
         </div>
       </div>
-
     </section>
   );
 }
