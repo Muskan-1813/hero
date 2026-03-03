@@ -183,7 +183,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
         {type === "devices" && (
           <div className="relative w-[520px] h-[220px] flex items-center justify-center overflow-hidden">
             {/* Devices - STATIC */}
-            <div className="relative w-[320px] h-[160px] mt-0 mx-auto z-5">
+            <div className="relative w-[320px] h-[160px] mt-0 mb-15 mx-auto z-5">
               <Image src="/devices.png" alt="" fill />
             </div>
 
@@ -199,7 +199,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
                 duration: 7,
                 ease: "linear",
               }}
-              className="absolute w-20 h-20 drop-shadow-[0_0_35px_rgba(124,255,0,0.95)]"
+              className="absolute w-20 h-20 mb-15 drop-shadow-[0_0_35px_rgba(124,255,0,0.95)]"
             >
               <Image src="/shield.png" alt="" fill />
             </motion.div>
@@ -208,7 +208,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
 
         {/* ================= SPLIT ================= */}
         {type === "split" && (
-          <div className="relative w-56 h-56 mx-auto flex items-center justify-center">
+          <div className="relative w-56 h-56 mx-auto mb-25 flex items-center justify-center">
             {/* Glow Background */}
             <div
               className="absolute w-48 h-48 rounded-full 
@@ -220,7 +220,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
               whileHover={""}
               animate={{ y: [0, -6, 0], scale: [1, 1.04, 1] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="relative w-40 h-40 z-10"
+              className="relative mb-15 w-40 h-40 z-10"
             >
               <Image src="/shield.png" alt="" fill />
             </motion.div>
@@ -261,7 +261,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
 
         {/* ================= WIFI ================= */}
         {type === "wifi" && (
-          <div className="relative w-48 h-48 mx-auto flex items-center justify-center">
+          <div className="relative w-48 h-48 mb-45 mx-auto flex items-center justify-center">
             {/* Bottom Green Glow */}
             <div
               className="absolute bottom-2 w-40 h-24 
@@ -269,7 +269,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
             />
 
             {/* Base WiFi (Dim) */}
-            <div className="absolute top-4 w-40 h-28 opacity-30">
+            <div className="absolute top-4 w-40 mb-45 h-28 opacity-30">
               <Image src="/wifi.png" alt="" fill />
             </div>
 
@@ -305,7 +305,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="absolute bottom-4 w-16 h-16 
+              className="absolute bottom-4 w-16 mb-10 h-16 
         drop-shadow-[0_0_25px_rgba(124,255,0,0.9)]"
             >
               <Image src="/lock.png" alt="" fill />
