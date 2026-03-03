@@ -5,14 +5,11 @@ import Image from "next/image";
 export default function ServerCoverage() {
   return (
     <section className="w-screen bg-transparent">
-      
+      <div className="absolute top-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-t from-transparent to-[#010101]" />
       {/* ===== Top Content ===== */}
       <div className="flex flex-col items-center  ">
-
         {/* Servers Neon Pill */}
         <div className="relative mb-6 inline-block">
-          
-          
           {/* Full Soft Glow */}
           <div
             className="
@@ -38,18 +35,17 @@ export default function ServerCoverage() {
               `}
             </style>
           </div>
-
         </div>
 
         {/* Top Label */}
         <div className="flex justify-center mb-6">
           <Button text={"Servers"} />
         </div>
-
       </div>
-       
-       {/* Global Server Coverage Heading */}
-        <h2 className="
+
+      {/* Global Server Coverage Heading */}
+      <h2
+        className="
           font-[var(--font-space)]
           font-bold
           text-[48px]
@@ -60,15 +56,14 @@ export default function ServerCoverage() {
           mb-20
            drop-shadow-[0_0_20px_rgba(34,197,94,0.3)] text-glow-white
 
-        ">
-          Global <span className="text-lime-400">Server</span> Coverage
-        </h2>
-
-      
+        "
+      >
+        Global <span className="text-lime-400">Server</span> Coverage
+      </h2>
 
       {/* ===== Full Screen Map ===== */}
       <div className="relative w-full  h-screen bg-[#010101]">
-
+        <div className="absolute -top-30 left-0 w-full h-32 pointer-events-none bg-gradient-to-b from-transparent to-[#010101] z-10" />
         <Image
           src="/world-map-dots.png"
           alt="World Map"
@@ -76,8 +71,7 @@ export default function ServerCoverage() {
           className="object-contain"
           priority
         />
-
-        </div>
+      </div>
     </section>
   );
 }

@@ -33,8 +33,8 @@ export default function FAQSection() {
 
   return (
     <section className=" bg-[#010101] mih-h-screen py-8 text-white">
+      
       <div className="max-w-7xl mx-auto  px-12">
-
         {/* Top Button */}
         <div className="flex justify-center mt-10 mb-6">
           <Button text={"FAQs"} />
@@ -53,27 +53,20 @@ export default function FAQSection() {
             mb-24
           "
         >
-          Your questions,{" "}
-          <span className="text-lime-400">
-            covered
-          </span>
+          Your questions, <span className="text-lime-400">covered</span>
         </h2>
 
         {/* Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 ">
-
           {/* LEFT SIDE */}
           <div className="space-y-6">
-
             {faqs.map((faq, index) => {
               const isActive = activeIndex === index;
 
               return (
                 <div
                   key={index}
-                  onClick={() =>
-                    setActiveIndex(isActive ? null : index)
-                  }
+                  onClick={() => setActiveIndex(isActive ? null : index)}
                   className={`
                     flex justify-between items-center
                     px-6 py-5 rounded-xl cursor-pointer
@@ -106,7 +99,6 @@ export default function FAQSection() {
                 </div>
               );
             })}
-
           </div>
 
           {/* RIGHT SIDE ANSWER BOX */}
@@ -133,9 +125,9 @@ export default function FAQSection() {
               )}
             </div>
           </div>
-
         </div>
       </div>
+      <div className="absolute top-0 left-0 w-full h-32 pointer-events-none bg-gradient-to-t from-transparent to-[#010101]" />
     </section>
   );
 }
