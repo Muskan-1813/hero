@@ -39,7 +39,7 @@ export default function HeroSection() {
 
           {/* Phones Image Container */}
           {/* On mobile, we remove the negative offsets so it stays in flow */}
-          <div className="relative w-full max-w-[450px] md:max-w-[650px] lg:w-[900px] 
+          <div className="hidden md:block relative w-full max-w-[450px] md:max-w-[650px] lg:w-[900px] 
                 h-[350px] md:h-[500px] lg:h-[650px] 
                 lg:relative lg:right-40 lg:-top-30 mt-5">
   <Image
@@ -51,7 +51,7 @@ export default function HeroSection() {
 </div>
 
           {/* Store Buttons */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 mt-6 lg:mt-0 lg:relative lg:bottom-50">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-6 mt-10 lg:mt-0 lg:relative lg:bottom-50">
             <Image
               src="/appStore.png"
               alt="App Store"
@@ -72,10 +72,23 @@ export default function HeroSection() {
 
       {/* MASSIVE CROPPED EARTH */}
       {/* Adjusted responsiveness: scale down for tablets, hide on small mobile to prevent overlap */}
-      <div className="absolute right-[-20%] lg:right-[-12%] top-[22%] lg:top-[62%] 
-                      scale-110 md:scale-150 lg:scale-220 -translate-y-1/2 
-                      w-[300px] h-[400px] md:w-[600px] md:h-[1000px] lg:w-[600px] lg:h-[1600px] 
-                      hidden md:block -z-10 opacity-50 lg:opacity-100 ">
+      <div
+  className="
+  relative flex justify-center items-center
+  w-[260px] h-[260px] mx-auto mt-10
+
+  md:absolute md:right-[-20%] md:top-[22%]
+  md:scale-150 md:w-[600px] md:h-[1000px]
+
+  lg:right-[-12%] lg:top-[62%] lg:scale-220 lg:w-[600px] lg:h-[1600px]
+
+  md:-translate-y-1/2
+  md:block
+  -z-10 md:z-auto
+  opacity-80 md:opacity-50 lg:opacity-100
+  "
+>
+
         <Image
           src="/earth.png"
           alt="Earth"

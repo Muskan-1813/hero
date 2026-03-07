@@ -124,7 +124,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
               className="absolute w-48 h-48 rounded-full bg-[#B6FF00] blur-3xl pointer-events-none"
             />
             <motion.div
-              animate={isHovered ? { filter: "brightness(1.3) drop-shadow(0 0 25px rgba(182, 255, 0, 0.6))", scale: 1.05 } : { filter: "brightness(1) drop-shadow(0_0_0px_rgba(182,255,0,0))", scale: 1 }}
+              animate={isHovered ? { filter: "brightness(1) drop-shadow(0 0 25px rgba(182, 255, 0, 0.6))", scale: 1.05 } : { filter: "brightness(1) drop-shadow(0_0_0px_rgba(182,255,0,0))", scale: 1 }}
               transition={{ duration: 0.4 }}
               className="relative w-44 h-44 z-10 mb-30"
             >
@@ -133,14 +133,14 @@ export default function FeatureCard({ title, desc, type }: Props) {
             <motion.div
               animate={isHovered ? { x: [-40, -10, -40], y: [-30, -5, -30], scale: [1, 0.7, 1], opacity: [1, 0.5, 1] } : { x: -40, y: -30, opacity: 1 }}
               transition={{ repeat: isHovered ? Infinity : 0, duration: 2, ease: "easeInOut" }}
-              className="absolute left-22 top-4 w-20 h-20 z-20 pointer-events-none mb-20"
+              className="absolute left-25 top-1 w-20 h-20 z-20 pointer-events-none mb-20"
             >
               <Image src="/leftarrow.png" alt="" fill className="object-contain" />
             </motion.div>
             <motion.div
               animate={isHovered ? { x: [40, 10, 40], y: [-30, -5, -30], scale: [1, 0.7, 1], opacity: [1, 0.5, 1] } : { x: 40, y: -30, opacity: 1 }}
               transition={{ repeat: isHovered ? Infinity : 0, duration: 2, ease: "easeInOut", delay: isHovered ? 0.2 : 0 }}
-              className="absolute right-22 top-4 w-20 h-20 z-20 pointer-events-none mb-40"
+              className="absolute right-24 top-1 w-20 h-20 z-20 pointer-events-none mb-40"
             >
               <Image src="/rightarrow.png" alt="" fill className="object-contain" />
             </motion.div>
