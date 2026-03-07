@@ -17,6 +17,7 @@ interface Props {
 
 export default function FeatureCard({ title, desc, type }: Props) {
   const [isHovered, setIsHovered] = useState(false);
+
   const arcs = [
     {
       d: "M8.5 13.5C9.5 12.5 10.5 12 12 12C13.5 12 14.5 12.5 15.5 13.5",
@@ -35,13 +36,15 @@ export default function FeatureCard({ title, desc, type }: Props) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Top Soft Highlight */}
+      {/* Top Highlight */}
       <div className="absolute inset-0 rounded-[32px] pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.05),transparent_60%)]" />
 
-      {/* Content */}
+      {/* Title */}
       <h3 className="font-['Space_Grotesk'] font-medium text-[22.46px] leading-[100%] tracking-[-0.01em] text-white mb-2">
         {title}
       </h3>
+
+      {/* Description */}
       <p className="text-white text-base">{desc}</p>
 
       {/* Animation Area */}
@@ -54,6 +57,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
           >
             <div className="absolute bottom-0 left-0 w-40 h-40">
               <Image src="/planet.png" alt="" fill className="object-contain" />
+
               <motion.div
                 variants={{
                   rest: { rotate: 0 },
@@ -76,6 +80,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
                 />
               </motion.div>
             </div>
+
             <div className="absolute bottom-3.5 left-[115px]">
               {[
                 { angle: -14, length: 280 },
@@ -92,6 +97,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
                   }}
                 >
                   <div className="w-full h-[2px] border-t border-dashed border-white/40" />
+
                   <motion.div
                     variants={{
                       rest: { x: 0, opacity: 0 },
@@ -106,7 +112,11 @@ export default function FeatureCard({ title, desc, type }: Props) {
                         },
                       },
                     }}
-                    className={`absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full ${i % 2 === 0 ? "bg-lime-400 shadow-[0_0_14px_rgba(124,255,0,0.9)]" : "bg-white shadow-[0_0_10px_rgba(255,255,255,0.9)]"}`}
+                    className={`absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full ${
+                      i % 2 === 0
+                        ? "bg-lime-400 shadow-[0_0_14px_rgba(124,255,0,0.9)]"
+                        : "bg-white shadow-[0_0_10px_rgba(255,255,255,0.9)]"
+                    }`}
                   />
                 </div>
               ))}
@@ -163,6 +173,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
                 className="object-contain"
               />
             </div>
+
             <motion.div
               animate={
                 isHovered
@@ -212,6 +223,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
               }
               className="absolute w-48 h-48 rounded-full bg-[#B6FF00] blur-3xl pointer-events-none"
             />
+
             <motion.div
               animate={
                 isHovered
@@ -236,6 +248,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
                 className="object-contain"
               />
             </motion.div>
+
             <motion.div
               animate={
                 isHovered
@@ -261,6 +274,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
                 className="object-contain"
               />
             </motion.div>
+
             <motion.div
               animate={
                 isHovered

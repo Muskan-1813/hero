@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow py-30 lg:py-0 mt-20">
+    <section className="relative w-full min-h-screen flex items-center overflow py-30 lg:py-0 mt-10">
       {/* Smooth Green Atmospheric Glow */}
       <div
         className="
@@ -19,7 +19,7 @@ export default function HeroSection() {
       />
 
       {/* MAIN CONTENT */}
-      <div className="relative z-10 max-w-7xl  pl-125 pr-0 md:pr-4 flex flex-col lg:flex-row items-center ">
+      <div className="relative z-10 max-w-7xl  lg:pl-120 pr-0 md:pr-4 flex flex-col lg:flex-row items-center ">
         
         {/* LEFT SIDE CONTENT WRAPPER */}
         {/* Note: xl:right-100 preserved for your 14-inch layout */}
@@ -38,15 +38,26 @@ export default function HeroSection() {
           </p>
 
           {/* Phones Image Container */}
+          {/* Earth for Mobile */}
+<div className="flex justify-center items-center mt-8 md:hidden">
+  <div className="relative w-[400px] h-[460px]">
+    <Image
+      src="/earth.png"
+      alt="Earth"
+      fill
+      className="object-contain animate-[spin_100s_linear_infinite_reverse] "
+    />
+  </div>
+</div>
           {/* On mobile, we remove the negative offsets so it stays in flow */}
-          <div className="relative w-full max-w-[450px] md:max-w-[650px] lg:w-[900px] 
+          <div className="relative w-full hidden md:block max-w-[450px] md:max-w-[650px] lg:w-[900px] 
                 h-[350px] md:h-[500px] lg:h-[650px] 
-                lg:relative lg:right-40 lg:-top-30 mt-5">
+                lg:relative lg:right-40 lg:-top-30 mt-5 md:display-none ">
   <Image
     src="/phones.png"
     alt="Phones"
     fill
-    className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.95)]"
+    className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.95)] "
   />
 </div>
 
@@ -86,3 +97,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
