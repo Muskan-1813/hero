@@ -71,30 +71,43 @@ export default function FeatureCard({ title, desc, type }: Props) {
 
         {/* ================= PERFORMANCE ================= */}
         {type === "performance" && (
-          <div className="relative w-full h-full">
-            <div className="absolute bottom-9 left-0 right-[80px] flex flex-col justify-between h-[120px] z-10">
-              {[0, 1, 2, 3, 4].map((i) => (
-                <div key={i} className="relative h-[1px] w-full bg-gradient-to-r from-[#B6FF00]/10 via-[#B6FF00]/40 to-transparent">
-                  <motion.div
-                    animate={isHovered ? { left: ["0%", "100%"], opacity: [0, 1, 1, 0] } : { left: "0%", opacity: 0 }}
-                    transition={{ repeat: Infinity, duration: 2.5 + i * 0.5, ease: "circIn", delay: i * 0.4 }}
-                    className={`absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full blur-[0.5px] ${i === 0 ? "bg-yellow-400 shadow-[0_0_12px_#fbbf24]" : i === 1 || i === 3 ? "bg-teal-400 shadow-[0_0_12px_#2dd4bf]" : "bg-white shadow-[0_0_12px_#ffffff]"}`}
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="absolute top-18 -translate-y-1/2 right-[-130px] w-[220px] h-[220px] rounded-full border border-[#7CFF00]/30 bg-gradient-to-l from-[#7CFF00]/10 to-transparent shadow-[0_0_80px_rgba(124,255,0,0.15)]" />
-          </div>
-        )}
-
+  <div className="relative w-full h-full">
+    {/* Line length and position restored to your original right-[80px] */}
+    <div className="absolute bottom-9 left-0 right-[80px] flex flex-col justify-between h-[120px] z-10">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <div key={i} className="relative h-[1px] w-full bg-gradient-to-r from-[#B6FF00]/10 via-[#B6FF00]/40 to-transparent">
+          <motion.div
+            /* - initial: positioned at -4px to be "half-hidden" on the left 
+               - animate: travels to 140% to reach the planet even though the line is shorter
+            */
+            initial={{ left: "-4px", opacity: 0.5 }}
+            animate={isHovered ? { 
+              left: ["-4px", "140%"], 
+              opacity: [0.5, 1, 1, 0] 
+            } : { left: "-4px", opacity: 0.5 }}
+            transition={{ 
+              repeat: isHovered ? Infinity : 0, 
+              duration: 2.5 + i * 0.5, 
+              ease: "circIn", 
+              delay: i * 0.4,
+              times: [0, 0.1, 0.85, 1] // Stays visible until 85% of the way to the planet
+            }}
+            className={`absolute top-1/2 -translate-y-1/2 w-2.5 h-2.5 rounded-full blur-[0.5px] ${i === 0 ? "bg-yellow-400 shadow-[0_0_12px_#fbbf24]" : i === 1 || i === 3 ? "bg-teal-400 shadow-[0_0_12px_#2dd4bf]" : "bg-white shadow-[0_0_12px_#ffffff]"}`}
+          />
+        </div>
+      ))}
+    </div>
+    <div className="absolute top-18 -translate-y-1/2 right-[-130px] w-[220px] h-[220px] rounded-full border border-[#7CFF00]/30 bg-gradient-to-l from-[#7CFF00]/10 to-transparent shadow-[0_0_80px_rgba(124,255,0,0.15)]" />
+  </div>
+)}
         {/* ================= DEVICES ================= */}
         {type === "devices" && (
           <div className="relative w-full h-[220px] flex items-center justify-center overflow-hidden">
-            <div className="relative w-[320px] h-[160px] z-10 mb-20 -ml-2">
+            <div className="relative w-[320px] h-[160px] z-10 mb-20 -ml-1 -mr-10">
               <Image src="/devices.png" alt="Devices" fill className="object-contain" />
             </div>
             <motion.div
-              animate={isHovered ? { x: ["-220px", "220px", "220px", "-220px"], zIndex: [20, 20, 0, 0], scale: [1, 1.1, 0.85, 1], filter: ["blur(0px)", "blur(0px)", "blur(2px)", "blur(0px)"] } : { x: "-100px", zIndex: 20, scale: 1 }}
+              animate={isHovered ? { x: ["-220px", "220px", "220px", "-220px"], zIndex: [20, 20, 0, 0], scale: [1, 1.1, 0.85, 1], filter: ["blur(0px)", "blur(0px)", "blur(2px)", "blur(0px)"] } : { x: "-180px", zIndex: 20, scale: 1 }}
               transition={isHovered ? { duration: 4, repeat: Infinity, ease: "easeInOut", times: [0, 0.45, 0.55, 1] } : { duration: 0.5 }}
               className="absolute w-24 h-24 drop-shadow-[0_0_30px_rgba(124,255,0,0.6)] mb-20"
             >
@@ -135,32 +148,43 @@ export default function FeatureCard({ title, desc, type }: Props) {
         )}
 
         {/* ================= WIFI ================= */}
-        {type === "wifi" && (
-          <div className="relative w-72 h-[400px] mx-auto flex flex-col items-center justify-center pb-60">
-            <div className="flex flex-col-reverse items-center justify-center gap-0 mb-[-12px]">
-              {[ { src: "/wifi01.svg", delay: 0 }, { src: "/wifi02.svg", delay: 0.3 }, { src: "/wifi03.svg", delay: 0.6 } ].map((arc, i) => (
-                <div key={i} className="relative w-40 h-6 flex items-center justify-center">
-                  <div className="absolute inset-0 opacity-20"><Image src={arc.src} alt="" fill className="object-contain" /></div>
-                  <motion.div
-                    animate={isHovered ? { opacity: [0, 1, 0], filter: ["brightness(1) drop-shadow(0 0 0px #fff)", "brightness(2.5) drop-shadow(0 0 20px #ffffff)", "brightness(1) drop-shadow(0 0 0px #fff)"] } : { opacity: 0 }}
-                    transition={{ repeat: isHovered ? Infinity : 0, duration: 1.8, delay: arc.delay }}
-                    className="absolute inset-0 z-10"
-                  >
-                    <Image src={arc.src} alt="" fill className="object-contain" />
-                  </motion.div>
-                </div>
-              ))}
-            </div>
-            <motion.div
-              animate={isHovered ? { y: [0, -4, 0], filter: "drop-shadow(0 0 25px rgba(182, 255, 0, 0.8))" } : { y: 0 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-20 h-20 z-20"
-            >
-              <Image src="/lock.png" alt="Lock" fill className="object-contain" />
-            </motion.div>
+{type === "wifi" && (
+  <div className="relative w-full h-[400px] mx-auto flex flex-col items-center justify-center pb-60">
+    {/* CHANGE: Added -space-y-3 and -space-y-reverse to pull arcs closer together like Image 2 */}
+    <div className="flex flex-col-reverse items-center justify-center space-y-2  mb-[-8px]">
+      {[ 
+        { src: "/wifi01.svg", delay: 0, width: "w-10" },  // Smaller base
+        { src: "/wifi02.svg", delay: 0.3, width: "w-20" }, // Balanced middle
+        { src: "/wifi03.svg", delay: 0.6, width: "w-32" }  // Top arc (w-32 is closer to Image 2 than w-80)
+      ].map((arc, i) => (
+        /* CHANGE: Height h-10 gives enough room for the arc curve to sit properly */
+        <div key={i} className={`relative ${arc.width} h-10 flex items-center justify-center`}>
+          <div className="absolute inset-0 opacity-20">
+            <Image src={arc.src} alt="" fill className="object-contain" />
           </div>
-        )}
-
+          <motion.div
+            animate={isHovered ? { 
+              opacity: [0, 1, 0], 
+              filter: ["brightness(1) drop-shadow(0 0 0px #fff)", "brightness(2.5) drop-shadow(0 0 20px #ffffff)", "brightness(1) drop-shadow(0 0 0px #fff)"] 
+            } : { opacity: 0 }}
+            transition={{ repeat: isHovered ? Infinity : 0, duration: 1.8, delay: arc.delay }}
+            className="absolute inset-0 z-10"
+          >
+            <Image src={arc.src} alt="" fill className="object-contain" />
+          </motion.div>
+        </div>
+      ))}
+    </div>
+    
+    <motion.div
+      animate={isHovered ? { y: [0, -4, 0], filter: "drop-shadow(0 0 25px rgba(182, 255, 0, 0.8))" } : { y: 0 }}
+      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      className="relative w-20 h-20 z-20"
+    >
+      <Image src="/lock.png" alt="Lock" fill className="object-contain" />
+    </motion.div>
+  </div>
+)}
         {/* ================= KILL SWITCH ================= */}
         {type === "kill" && (
           <div className="relative w-full h-40 mx-auto flex items-center justify-center">
