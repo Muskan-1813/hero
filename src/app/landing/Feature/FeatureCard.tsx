@@ -280,7 +280,7 @@ export default function FeatureCard({ title, desc, type }: Props) {
           : { y: -125, opacity: 1 }
       }
       transition={{ repeat: isHovered ? Infinity : 0, duration: 2, ease: "easeInOut" }}
-      className="absolute left-16 z-20 pointer-events-none" // Left alignment fix
+      className="absolute left-16 z-20 pointer-events-none" // Left alint fix
     >
       <div className="relative w-16 h-16">
         <Image src="/leftarrow.png" alt="Left" fill className="object-contain" />
