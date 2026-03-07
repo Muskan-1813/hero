@@ -80,32 +80,105 @@ export default function CTASection() {
           {/* LEFT */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="flex items-center gap-3 mb-0">
-              <Image src="/logo.png" alt="Logo" width={50} height={100} />
+              <Image src="/logo.png" alt="Logo" width={25} height={50} />
               <span className="font-['Inter'] font-large text-2xl lg:text-2xl">Traverse VPN</span>
             </div>
 
-            <p className="font-['DM_Sans'] font-extralight text-white text-lg lg:text-s max-w-xs mb-10 leading-relaxed ml-16">
-              Take control of your digital identity and enjoy the web the way it
+            <p className="font-['DM_Sans'] font-light text-white text-lg lg:text-s max-w-xs mb-10 leading-relaxed ml-1 mt-2">
+              Take control of your digital <br/> identity and enjoy the web <br/> the way it
               was meant to be.
             </p>
 
             
-
+         <div className="flex justify-center order-first lg:order-none">
+            <Button text={"Get Traverse Now!"} />
+          </div>
 
             
           </div>
 
-          {/* CENTER BUTTON */}
-          <div className="flex justify-center order-first lg:order-none">
-            <Button text={"Get Traverse Now!"} />
-          </div>
+          
 
-          {/* RIGHT LINKS */}
-          <div className="font-['DM_Sans'] flex flex-col items-center lg:items-end gap-4 lg:gap-5 text-white mr-12">
-            <a href="#" className="hover:text-lime-400 transition text-lg lg:text-xl">About Us</a>
-            <a href="#" className="hover:text-lime-400 transition text-lg lg:text-xl">VPN For Abdroid</a>
-            <a href="#" className="hover:text-lime-400 transition text-lg lg:text-xl">Refund Policy</a>
-          </div>
+         <div className="flex gap-24 ml-32">
+
+  {/* Company Section */}
+  <div className="font-['DM_Sans'] flex flex-col items-start gap-3 text-white ml-40">
+    <a href="#" className="transition text-lg lg:text-2xl">
+      Company
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg"
+    >
+      About Us
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg"
+    >
+      Contact Us
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg whitespace-nowrap"
+    >
+      Refund Policy
+    </a>
+  </div>
+
+  {/* Platforms Section */}
+  <div className="font-['DM_Sans'] flex flex-col items-start gap-3 text-white">
+    <a href="#" className="transition text-lg lg:text-2xl">
+      Platforms
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg whitespace-nowrap"
+    >
+      VPN for Android
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg whitespace-nowrap"
+    >
+      VPN for iPhone
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg whitespace-nowrap"
+    >
+      VPN for Business
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg whitespace-nowrap"
+    >
+      VPN for Streaming
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg whitespace-nowrap"
+    >
+      VPN for Gaming
+    </a>
+
+    <a
+      href="#"
+      className="hover:text-lime-400 font-light transition text-lg lg:text-lg whitespace-nowrap"
+    >
+      VPN for Security
+    </a>
+  </div>
+
+</div>
         </div>
 
         {/* BOTTOM ROW */}
@@ -132,15 +205,45 @@ export default function CTASection() {
   ))}
 </div>
   {/* Center */}
-  <div className="font-['DM_Sans'] text-center text-m lg:text-m">
-    © 2025, All Rights Reserved
-  </div>
+  
+</div>
+<div className="mt-12 font-['DM_Sans'] ml-12 text-xl text-[#5C5C5C] mb-4">
 
-  {/* Right */}
-  <div className="font-['DM_Sans'] text-right text-m lg:text-m">
-    <span >Privacy Policy</span>
-    {" | "}
-    <span >Terms of Use</span>
+  {/* Divider Line */}
+  <div className="w-full h-[1px] bg-white/20 mb-6"></div>
+
+  {/* Bottom Row */}
+  <div className="flex justify-between items-center text-[20px] text-[#5C5C5C];
+">
+
+    {/* Left */}
+    <div>
+      © 2025, All Rights Reserved
+    </div>
+
+    {/* Right */}
+    <div className="flex items-center gap-2">
+
+      <span className="hover:text-lime-400 transition cursor-pointer">
+        Privacy Policy
+      </span>
+
+      <span className="text-[#5C5C5C];
+">|</span>
+
+      <span className="hover:text-lime-400 transition cursor-pointer">
+        Terms of Use
+      </span>
+
+      <span className="text-[#5C5C5C];
+">|</span>
+
+      <span className="hover:text-lime-400 transition cursor-pointer">
+        Sitemap
+      </span>
+
+    </div>
+
   </div>
 
 </div>

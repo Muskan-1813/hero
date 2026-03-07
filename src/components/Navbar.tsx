@@ -13,7 +13,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#030A00]">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] z-50 bg-[#030A00]/80 backdrop-blur-md rounded-full border border-white/10 shadow-lg">
+      
       <style>
         {`
           @keyframes spin-slow {
@@ -26,7 +27,7 @@ const Navbar = () => {
         `}
       </style>
 
-      <div className="max-w-11/12 mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="px-6 h-16 flex items-center justify-between">
 
         {/* Left Section */}
         <div className="flex items-center gap-12">
@@ -60,12 +61,12 @@ const Navbar = () => {
         {/* Right Section */}
         <div className="flex items-center gap-6">
 
-          {/* Language Icon (Desktop only) */}
+          {/* Language Icon */}
           <button className="hidden md:flex text-gray-300 hover:text-white transition-colors">
             <Languages size={20} />
           </button>
 
-          {/* Get Traverse Button (Desktop only) */}
+          {/* Get Traverse Button */}
           <Link
             href="/get-started"
             className="
@@ -91,12 +92,13 @@ const Navbar = () => {
             Get Traverse
           </Link>
 
-          {/* Hamburger Menu (Mobile only) */}
+          {/* Hamburger */}
           <button className="md:hidden text-white">
             <Menu size={28} />
           </button>
 
         </div>
+
       </div>
     </nav>
   );
